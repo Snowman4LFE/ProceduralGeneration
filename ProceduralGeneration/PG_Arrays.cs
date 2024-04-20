@@ -29,7 +29,7 @@
 
         for (int i = 0; i < arrayLength; i++)
         {
-            tempArray[i] = new Random().Next(minValue, maxValue);
+            tempArray[i] = new Random().Next(minValue, maxValue + 1);
         }
 
         return tempArray;
