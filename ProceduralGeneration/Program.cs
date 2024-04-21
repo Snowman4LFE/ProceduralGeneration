@@ -8,4 +8,10 @@
 
 PG_1D_Generation.RandomTerrainGeneration();
 
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
+
+PG_1D_Generation.ProceduralGeneration1D();
  
