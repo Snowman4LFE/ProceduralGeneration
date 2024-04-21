@@ -65,6 +65,7 @@ public class PG_1D_Generation
             {
                 currentIndex = startingIndex + 1;
                 isLeftSideDone = true;
+                currentValue = startingValue;
             }
 
             if (currentIndex >= arrayLength  - 1)
