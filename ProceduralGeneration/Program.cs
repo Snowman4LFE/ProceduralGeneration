@@ -6,12 +6,12 @@
 //PG_Arrays.PrintArray(array);
 
 
-PG_1D_Generation.RandomTerrainGeneration();
+PG_2D_Generation.RandomTerrainGeneration();
 
 Console.WriteLine();
 Console.WriteLine();
 Console.WriteLine();
 Console.WriteLine();
 
-PG_1D_Generation.ProceduralGeneration1D();
+PG_2D_Generation.ProceduralGeneration2D();
  
