@@ -1,48 +1,62 @@
 ﻿public class PG_2D_Generation
 {
-    public static void RandomTerrainGeneration(int arrayLength = 50, int arrayHeight = 50, int minValue = 0, int maxValue = 9)
+
+    // Using a 3D array to store the map data
+    // First dimension is the y-axis
+    // Second dimension is the x-axis
+    // Third dimesion is a pair of values
+    // The first value is displayed value
+    // The second value is the entropy value
+    //
+    // The array is intialized with 0 for all displayed values
+    // and all entropy values will be set to the total number of available tiles.
+    //
+
+   
+
+    public static int[,,] GenerateEmptyMapData(int width, int height, int numTiles)
     {
+        int[,,]? mapData;
 
-        int[,] array = PG_Arrays.GenerateRandomIntArray2D(arrayLength, arrayHeight, minValue, maxValue);
+        mapData = new int[height, width, 2];
 
-        PG_Arrays.PrintArray(array);
+        for (int y = 0; y < height; y++)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                mapData[y, x, 0] = 0;
+                mapData[y, x, 1] = numTiles;
+            }
+        }
 
-        Console.WriteLine();
-        Console.WriteLine();
-
+        return mapData;
     }
 
-    public static void ProceduralGeneration2D(int arrayLength = 50, int arrayHeight = 50, int minValue = 1, int maxValue = 9)
+    public static void PrintMapDisplayData(int[,,] mapData)
     {
-        Random random = new Random();
+        for (int y = 0; y < mapData.GetLength(0); y++)
+        {
+            for (int x = 0; x < mapData.GetLength(1); x++)
+            {
+                Console.Write(mapData[y, x, 0] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
 
-        int startingIndex = random.Next(0, arrayLength);
-        int startingHeight = random.Next(0, arrayHeight);
-        int startingValue = random.Next(minValue, maxValue + 1);
-        int[,] array = new int[arrayLength, arrayHeight];
-
-        int currentIndex = startingIndex;
-        int currentHeight = startingHeight;
-        int currentValue = startingValue;
-        int delta;
-
-
-        array[currentIndex, currentHeight] = currentValue;
-
-        //Check if neighbors are empty
-        //Choose a random empty direction
-        //Move to that direction
-        //Set the value of the new position to the current value
-
-
-
-
-
-        PG_Arrays.PrintArray(array);
-
-
+    public static void PrintMapEntropyData(int[,,] mapData)
+    {
+        for (int y = 0; y < mapData.GetLength(0); y++)
+        {
+            for (int x = 0; x < mapData.GetLength(1); x++)
+            {
+                Console.Write(mapData[y, x, 1] + " ");
+            }
+            Console.WriteLine();
+        }
     }
 
 
-    }
+}
+
 

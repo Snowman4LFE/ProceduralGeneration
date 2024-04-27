@@ -6,12 +6,15 @@
 //PG_Arrays.PrintArray(array);
 
 
-PG_2D_Generation.RandomTerrainGeneration();
+int[,,] emptyMap = PG_2D_Generation.GenerateEmptyMapData(50, 50, 9);
+
+PG_2D_Generation.PrintMapDisplayData(emptyMap);
 
 Console.WriteLine();
 Console.WriteLine();
 Console.WriteLine();
 Console.WriteLine();
 
-PG_2D_Generation.ProceduralGeneration2D();
- 
+PG_2D_Generation.PrintMapEntropyData(emptyMap);
+
+
